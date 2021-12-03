@@ -10,6 +10,5 @@ public class Solution {
       Converter converter = new Converter();
       reader.toPrint(converter.convertToPRN(reader.toRead()));
 
-
     }
 }
