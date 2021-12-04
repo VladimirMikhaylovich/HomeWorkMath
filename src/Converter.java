@@ -2,6 +2,13 @@ import java.util.Stack;
 
 
 public class Converter {
+   String inValue="";
+    public Converter(String inValue) {
+        Validator validator = new Validator();
+        if (validator.toValidateString(inValue) && inValue != null) {//?????????
+            this.inValue = inValue;
+        }
+    }
 
         public String convertToPRN (String inText){      // make PRN from String
             String current ="";
@@ -10,7 +17,7 @@ public class Converter {
             Validator validator = new Validator();
             for (int i = 0; i < inText.length(); i++) {
                 grade = symbolChecking(inText.charAt(i));
-                if (validator.toValidate(inText.charAt(i))){
+                if (validator.toValidateChar(inText.charAt(i))){
                     if (grade == 0) current += inText.charAt(i);
 
                     if (grade > 0) {   // ==2 || ==3

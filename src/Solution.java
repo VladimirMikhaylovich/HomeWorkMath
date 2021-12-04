@@ -7,8 +7,8 @@ public class Solution {
       Reader reader = new Reader();
       //reader.toPrint(reader.toRead());
      // Calculation calculation = new Calculation();
-      Converter converter = new Converter();
-      reader.toPrint(converter.convertToPRN(reader.toRead()));
+      Converter converter = new Converter(reader.toRead());
+      reader.toPrint(converter.convertToPRN(converter.inValue));
 
     }
 }
