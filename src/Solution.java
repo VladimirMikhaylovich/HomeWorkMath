@@ -5,10 +5,12 @@ public class Solution {
 
     public static void main(String[] args) throws IOException {
       Reader reader = new Reader();
-      //reader.toPrint(reader.toRead());
-     // Calculation calculation = new Calculation();
+
       Converter converter = new Converter(reader.toRead());
       reader.toPrint(converter.convertToPRN(converter.inValue));
+      Calculation calculation = new Calculation();
+
+      System.out.println(calculation.calculator(converter.convertToPRN(converter.inValue)));
 
     }
 }

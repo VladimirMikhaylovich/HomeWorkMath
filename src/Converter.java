@@ -3,6 +3,7 @@ import java.util.Stack;
 
 public class Converter {
    String inValue="";
+   Priority priority = new Priority();
     public Converter(String inValue) {
         Validator validator = new Validator();
         if (validator.toValidateString(inValue) && inValue != null) {//?????????
@@ -16,14 +17,14 @@ public class Converter {
             int grade;
             Validator validator = new Validator();
             for (int i = 0; i < inText.length(); i++) {
-                grade = symbolChecking(inText.charAt(i));
+                grade = priority.symbolChecking(inText.charAt(i));
                 if (validator.toValidateChar(inText.charAt(i))){
                     if (grade == 0) current += inText.charAt(i);
 
                     if (grade > 0) {   // ==2 || ==3
                         current += " ";
                         while (!stack.empty()) {
-                            if (symbolChecking(stack.peek()) >= grade) current += stack.pop();
+                            if (priority.symbolChecking(stack.peek()) >= grade) current += stack.pop();
                             break;
                         }
                         stack.push(inText.charAt(i));
@@ -34,16 +35,5 @@ public class Converter {
 
             return current;
         }
-
-
-        private int symbolChecking(char symbol){         // sorting by symbol grade
-
-            if(symbol == '*' || symbol == '/') return 3;
-            if(symbol == '+' || symbol == '-') return 2;
-            if(symbol == '(') return 1;
-            if(symbol == ')') return -1;
-            return 0;
-        }
-
     }
 
