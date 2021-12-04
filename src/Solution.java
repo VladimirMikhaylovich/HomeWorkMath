@@ -4,7 +4,7 @@ public class Solution {
 
 
     public static void main(String[] args) throws IOException {
-      Reader reader = new Reader();
+    Reader reader = new Reader();
 
       Converter converter = new Converter(reader.toRead());
       reader.toPrint(converter.convertToPRN(converter.inValue));

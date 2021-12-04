@@ -4,14 +4,14 @@ public class Validator {
 
     protected boolean toValidateChar(Character c){
        boolean isValid = false;
-       String operators = ".+-*/0123456789";
+       String operators = ".+-*/0123456789()";
         for (int i = 0; i <operators.length() ; i++) {
             if(operators.charAt(i)==c) return true;
         }
-         throw new NoSuchElementException("Please, type only symbols: 0-9, *,/,+,-, or .");
+         throw new NoSuchElementException("Please, type only symbols: 0-9, *,/,+,-, () or .");
     }
     protected  boolean toValidateString(String value){
-        String operators = "+-*/";
+        String operators = "+-*/()";
         if(value.charAt(0)== '-') throw new NoSuchElementException("Negative value is not allowed");
         for (int i = 0; i < value.length();) {
             if(value.charAt(i)=='+' || value.charAt(i)=='-' || value.charAt(i)=='/' || value.charAt(i)=='*'){

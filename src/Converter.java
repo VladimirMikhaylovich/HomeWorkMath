@@ -21,13 +21,21 @@ public class Converter {
                 if (validator.toValidateChar(inText.charAt(i))){
                     if (grade == 0) current += inText.charAt(i);
 
-                    if (grade > 0) {   // ==2 || ==3
+                    if (grade > 1) {   // ==2 || ==3
                         current += " ";
                         while (!stack.empty()) {
                             if (priority.symbolChecking(stack.peek()) >= grade) current += stack.pop();
                             break;
                         }
                         stack.push(inText.charAt(i));
+                    }
+                    if(grade==1){
+                        stack.push(inText.charAt(i));
+                    }
+                    if(grade == -1){
+                        //current += " ";
+                        while (priority.symbolChecking(stack.peek()) !=1 ) current+=stack.pop();
+                        stack.pop();
                     }
                 }
             }
