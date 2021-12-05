@@ -10,7 +10,7 @@ public class Solution {
       reader.toPrint(converter.convertToPRN(converter.inValue));
       Calculation calculation = new Calculation();
 
-      System.out.println(calculation.calculator(converter.convertToPRN(converter.inValue)));
+     System.out.println(calculation.calculator(converter.convertToPRN(converter.inValue)));
 
     }
 }

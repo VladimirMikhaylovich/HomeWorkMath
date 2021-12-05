@@ -4,7 +4,7 @@ public class Validator {
 
     protected boolean toValidateChar(Character c){
        boolean isValid = false;
-       String operators = ".+-*/0123456789()";
+       String operators = ".+-*/0123456789)(";
         for (int i = 0; i <operators.length() ; i++) {
             if(operators.charAt(i)==c) return true;
         }
@@ -19,7 +19,8 @@ public class Validator {
             if(value.charAt(i)=='+' || value.charAt(i)=='-' || value.charAt(i)=='/' || value.charAt(i)=='*'){
                 throw new NoSuchElementException("Negative value is not allowed");}
             else{
-                if(value.charAt(i)=='+' || value.charAt(i)=='/' || value.charAt(i)=='*') throw new NoSuchElementException("Not correct expression");
+                if(value.charAt(i)=='+' || value.charAt(i)=='/' || value.charAt(i)=='*')
+                    throw new NoSuchElementException("Not correct expression");
             }
             }  else{
                 i++;
