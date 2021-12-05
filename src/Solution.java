@@ -8,10 +8,7 @@ public class Solution {
     NegativeFixation fixation = new NegativeFixation();
 
       Converter converter = new Converter(reader.toRead());
-     reader.toPrint(fixation.negativeFix(converter.inValue));
-     reader.toPrint(converter.convertToPRN(fixation.negativeFix(converter.inValue)));
       Calculation calculation = new Calculation();
-
       System.out.println(calculation.calculator(converter.convertToPRN(fixation.negativeFix(converter.inValue))));
 
     }
